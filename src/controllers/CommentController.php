@@ -14,8 +14,6 @@ class CommentController extends Controller
       $userId = $_SESSION['user_id'];
       $content = $_POST['content'];
 
-      var_dump($postId, $userId, $content);
-
       $comment = $this->model('Comment');
       if ($comment->addComment($postId, $userId, $content)) {
         header("Location: /post/index");
